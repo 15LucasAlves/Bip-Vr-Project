@@ -1,6 +1,7 @@
 using Oculus.Interaction.HandGrab;
 using Oculus.Interaction;
 using UnityEngine;
+// Fish movement (startPullingTowards maybe useful for puzzle)
 
 public class Point : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Point : MonoBehaviour
     private Vector3 pullTarget;
     public float pullSpeed;
 
-    public Transform holder;
+    public Transform holder; // list of points will be in the magnet
     public AudioSource audioS;
     [SerializeField] private GameObject center;
     public DistanceHandGrabInteractable grab;

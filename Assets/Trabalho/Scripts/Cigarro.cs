@@ -2,6 +2,7 @@ using Oculus.Interaction.HandGrab;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// cigarette blows smoke or not 
 
 public class Cigarro : MonoBehaviour
 {
