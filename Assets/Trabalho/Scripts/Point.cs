@@ -166,7 +166,8 @@ public class Point : MonoBehaviour
     {
         GameManager.Instance.AddPoints(100);
         center.gameObject.SetActive(true);
-        Destroy(gameObject, center.GetComponent<ParticleSystem>().main.duration);
+        // delete this line to let the fish life
+        //Destroy(gameObject, center.GetComponent<ParticleSystem>().main.duration);
     }
 
     /// <summary>
