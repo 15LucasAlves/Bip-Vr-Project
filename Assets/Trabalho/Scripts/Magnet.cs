@@ -2,6 +2,7 @@ using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using System.Collections.Generic;
 using UnityEngine;
+// Magnet to pick up currnetly the fish
 
 public class Magnet : MonoBehaviour
 {
