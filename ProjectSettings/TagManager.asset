@@ -5,12 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Peixe
-  - Trash
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - cam
