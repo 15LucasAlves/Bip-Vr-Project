@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TrashSpawner : MonoBehaviour
 {
@@ -17,13 +18,30 @@ public class TrashSpawner : MonoBehaviour
         SpawnTrash();
     }
 
-    void SpawnTrash()
+void SpawnTrash()
     {
         for (int i = 0; i < spawnAmount; i++)
         {
             Vector3 randomPosition = GetRandomPosition();
             GameObject randomTrash = trashPrefabs[Random.Range(0, trashPrefabs.Length)];
-            Instantiate(randomTrash, randomPosition, Quaternion.identity);
+            GameObject spawnedTrash = Instantiate(randomTrash, randomPosition, Quaternion.identity);
+
+            // Stelle sicher, dass ein Rigidbody vorhanden ist
+            
+
+            // Stelle sicher, dass ein Collider vorhanden ist
+            Collider col = spawnedTrash.GetComponent<Collider>();
+            if (col == null)
+            {
+                col = spawnedTrash.AddComponent<BoxCollider>();
+            }
+
+            // Falls du Unitys XR Toolkit nutzt, füge ein Grab-Interactable hinzu
+            XRGrabInteractable grabInteractable = spawnedTrash.GetComponent<XRGrabInteractable>();
+            if (grabInteractable == null)
+            {
+                grabInteractable = spawnedTrash.AddComponent<XRGrabInteractable>();
+            }
         }
     }
 
